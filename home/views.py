@@ -107,7 +107,7 @@ def loginscheck(request):
         # location.href='/price'
             
         if result:
-            response = HttpResponse("<script>alert('login success');location.href='/Pagehome'</script>")
+            response = HttpResponse("<script>alert('login success');location.href='/service'</script>")
             if 'rememberme' in request.POST.keys() and request.POST['rememberme']:
                 expiresdate = datetime.datetime.now() + datetime.timedelta(days=7)
                 response.set_cookie("name", name, expires=expiresdate)
