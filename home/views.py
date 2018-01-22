@@ -146,7 +146,7 @@ def checkorder(request):
         if member:
             insert("""INSERT INTO carorder(model,days,area,returnarea,email) VALUES (%s,%s,%s,%s,%s)""", tuple([model,days,area,returnarea,email]))    
             # 回復結果
-            responseString = "已接收訂單，會有專人與您聯絡, model:%s, days:%s , area:%s, returnarea:%s, email:%s" % (model,days,area,returnarea,email)
+            responseString = "已接收訂單，會有專人與您聯絡。　預約租車型號為:%s,　承租天數:%s , 您的email:%s" % (model,days,email)
             return HttpResponse("<script>alert('"+ responseString +"');location.href='/Pagehome'</script>")
         
     responseString = "請先加入會員"
