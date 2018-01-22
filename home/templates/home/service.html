@@ -6,6 +6,12 @@
   width:150px;
   display: inline-block;
 }
+
+    #godown{
+        padding-top: 80px ;
+        padding-bottom: 80px;
+
+    }
 </style>
 <title>預約租車</title>
 {% endblock %} 
@@ -13,7 +19,7 @@
 {% block content %}
 <form method="POST" id="order" action="/checkorder">
 {% csrf_token %}
-<div style="width: 30rem;" class="container">
+<div style="width: 30rem;" class="container" id="godown">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputModel" font size="12">Models</label>
@@ -43,24 +49,24 @@
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputArea">Area</label>
+            <label class="input-group-text" for="inputArea">Choose...</label>
         </div>
         <select class="custom-select" id="inputArea" name="area">
             <option selected>Area</option>
-            <option value="1">大安區</option>
-            <option value="2">三重區</option>
-            <option value="3">大同區</option>
+            <option value="1">大安區復興南路一段</option>
+            <option value="2">三重區重新路一段</option>
+            <option value="3">大同區民權西路一段</option>
         </select>
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputReturearea">Return Area</label>
+            <label class="input-group-text" for="inputReturearea">Choose...</label>
         </div>
         <select class="custom-select" id="inputReturearea" name="returnarea">
             <option selected>Return Area</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">大安區復興南路一段</option>
+            <option value="2">三重區重新路一段</option>
+            <option value="3">大同區民權西路一段</option>
         </select>
     </div>
     <!-- <div class="input-group mb-3">
@@ -93,9 +99,9 @@
 </form>
 <script>
     modelPrice = {
-        'i8': 1000,
-        'M4': 2000,
-        'cayenne': 3000
+        'i8': 6600,
+        'M4': 5500,
+        'cayenne': 6000,
     }
 
     $('#order').submit(function (){
