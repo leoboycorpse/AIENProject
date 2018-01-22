@@ -1,0 +1,55 @@
+{% extends 'body.html'%} {% block style %}
+<style>
+    #p {
+        padding-top: 20px
+    }
+
+    .divpp {
+        float: left;
+        
+    
+        
+    }
+</style>
+<title>車款介紹</title>
+{% endblock %} {% block content %}
+
+
+<div class="container" id="p">
+    <div class="card-deck">
+        <div class="card" style="margin-top: 10">
+            <img class="card-img-top" src="http://st.motortrend.com/uploads/sites/5/2014/08/2014-BMW-i8-promo4.jpg?interpolation=lanczos-none&fit=around|660:438"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">BMW i8</h5>
+                <p class="card-text">全新跑車概念。更省油－採智慧型輕量化結構搭配碳纖維與空氣力學設計。 更環保永續－搭載高效 BMW eDrive 科技、內裝使用可回收材質。完全無損出色動態與跑車化外觀。 絕不妥協，而是完美結合駕駛樂趣與社會責任。BMW
+                    i8 為插電式油電混合車，集先進電動馬達與內燃引擎科技的優勢於一身。 成就超凡駕駛體驗－並提供驚人的省油與低排放效益。
+                </p>
+                <a href="https://www.bmw.com.tw/zh/all-models/bmw-i/i8/2014/index.html" class="btn btn-primary divpp" >
+                    官網介紹</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.superstreetonline.com/f/65280230+w660+h440+q80+re0+cr1/2015-bmw-m4-convertible-top-up-in-motion-winding-road.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">BMW M4</h5>
+                <p class="card-text">全新BMW M4雙門跑車，具有M款TwinPower Turbo直列六缸汽油引擎， 最多可產生450匹馬力、再搭配七速M款雙離合器變速系統、M款跑車化電子懸吊系統， 以提供讓人印象深刻的跑車風貌和精準優異的操控性，勇於挑戰當前的駕駛環境。
+                </p>
+                <a href="https://www.bmw.com.tw/zh/all-models/m-series/m4-coupe/2017/index.html" class="btn btn-primary">官網介紹</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.trucktrend.com/f/137687412+w660+h495+cr1/2019-porsche-cayenne-exterior-front-quarter-02.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Porsche cayenne</h5>
+                <p class="card-text">Five doors that are open to any adventure. With a new, dynamic design and a new generation of efficient,
+                    turbocharged engines. With outstanding digital connectivity that brings the whole world into the cockpit.
+                    With versatility, quality and new cutting-edge driver assistance systems that offer both driver and passengers
+                    extraordinary comfort.</p>
+                <a href="#" class="btn btn-primary">官網介紹</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
