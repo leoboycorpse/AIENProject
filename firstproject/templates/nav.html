@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light  mb-3" style="background-color:aliceblue">
 <div class="collapse navbar-collapse" id="navbarNav">
-    <a class="nav-link" style="color:black" href="{% url "name:Pagehome" %}">首頁</a>
-    <a class="nav-link" style="color:black" href="{% url "name:service" %}">預約租車</a>
-    <a class="nav-link" style="color:black" href="{% url "name:model" %}">車型介紹</a>
+    <a class="nav-link" style="color:black" href="Pagehome">首頁</a>
+    <a class="nav-link" style="color:black" href="service">預約租車</a>
+    <a class="nav-link" style="color:black" href="model">車型介紹</a>
     
     <ul class="navbar-nav"><li class="nav-item active">
-        {% if request.COOKIES.id %}
-        <a class="nav-link" style="color:black" href='price/{{ request.COOKIES.id}}'>會員專區</a><span class="sr-only">(current)</span></a></li>
-        {% endif %}
+        <a class="nav-link" style="color:black" href="price">費用說明<span class="sr-only">(current)</span></a></li>
+    
         </li>
         <li class="nav-item">
             

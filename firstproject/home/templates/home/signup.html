@@ -1,0 +1,75 @@
+{% extends 'body.html'%} {% csrf_token %} {% block style %}
+<style>
+    label {
+        color: white
+    }
+    text {
+        color: white
+    }
+    #side{
+        padding-top: 80px ;
+        padding-bottom: 80px;
+    }
+</style>
+    
+
+
+<title>會員</title>
+{% endblock %} {% block content %}
+
+<div style="width: 30rem;" class="container" id="side">
+
+
+    <form method="POST" action="/signupcheck">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" class="form-control" id="name" name="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="address" class="form-control" id="address" name="address" placeholder="Enter Address">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone">
+            <span class='error3' style="color: white"></span>
+        </div>
+        <!-- <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="rememberme" value="yes">
+            <label class="form-check-label" for="exampleCheck1" color="white"></label>記住我 -->
+        <button type="submit" class="btn btn-primary mt-2">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>送出資料</button>
+
+</div>
+</div>
+</form>
+
+
+
+
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script>
+//手機格式驗證
+var rule3=/^09\d{2}\d{6}$/;
+$("#phone").blur(function(){
+    if(rule3.test($(this).val())){
+        $('.error3').text('')
+        }
+    else{
+        $('.error3').text('不符合規則，請輸入「09xx-xxxxxx」')
+        }})
+</script>
+{% endblock %}
+
+

@@ -14,10 +14,7 @@ urlpatterns = [
 
     path('Pagehome',views.Pagehome,name='Pagehome'),
     path('model',views.model,name='model'),
-    
-    # path('price',views.price,name='price'),
-    path('price/<int:id>',views.price,name='price'),
-    
+    path('price',views.price,name='price'),
     path('service',views.service,name='service'),
     path('area',views.area,name='area'),
     
@@ -27,6 +24,5 @@ urlpatterns = [
     path('signup', views.signup,name='signup'),
     path('signupcheck',views.signupcheck,name='signupcheck'),
     path('checkorder',views.checkorder,name='checkorder'),
-    path('edit/<int:id>',views.edit,name='edit'),
 ]
 

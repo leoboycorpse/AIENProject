@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Member
+
 from django.core.files.storage import FileSystemStorage
 from django.db import connection
 
@@ -51,8 +51,7 @@ def Pagehome(request):
 
 def model(request):
     return render(request,'home/model.html', locals())
-def price(request,id):
-    member = Member.objects.get(id=int(id))
+def price(request):
     return render(request,'home/price.html', locals())
 def service(request):
     return render(request,'home/service.html', locals())
@@ -113,12 +112,9 @@ def loginscheck(request):
                 expiresdate = datetime.datetime.now() + datetime.timedelta(days=7)
                 response.set_cookie("name", name, expires=expiresdate)
                 response.set_cookie("email", email, expires=expiresdate)
-                response.set_cookie("id", member[0], expires=expiresdate)
             else:
                 response.set_cookie("name", name)
                 response.set_cookie("email", email)
-                response.set_cookie("id", member[0])
-                
                 
             return response
         else :   
@@ -130,7 +126,6 @@ def logouts(request):
     response = HttpResponse("<script>alert('登出');location.href='/Pagehome'</script>")
     response.delete_cookie('name')
     response.delete_cookie('email')
-    response.delete_cookie('id')
     return response
 
 def checkorder(request):
@@ -157,41 +152,9 @@ def checkorder(request):
     responseString = "請先加入會員"
     return HttpResponse("<script>alert('"+ responseString +"');location.href='/signup'</script>")
 
-def edit(request,id):  #修改會員
+def checkagain(request):  #查詢訂單
     # 接收參數
-    if request.method == 'POST':        
-        name = request.POST["name"]      
-        email = request.POST["email"]
-        password = request.POST["password"]
-        address = request.POST["address"]
-        phone = request.POST["phone"]
-
-        #todo 修改資料庫中的會員資料
-        carmember = Member.objects.get(id=int(id))
-        if name != '' :
-            carmember.name = name
-
-        if email != '' :
-            carmember.email = email
-
-        if password != '' :
-            carmember.password = password
-
-        if address != '' :
-            carmember.address = address
-
-        if phone != '' :
-            carmember.phone = phone
-
-        carmember.save()
-        #todo 修改完成後轉到http://localhost:8000/member
-        return redirect("/logins")
-
-    title = "會員修改"
-    #todo 根據會員編號取得會員資料傳給update.html
-    carmember = Member.objects.get(id=int(id))
-
-    return render(request,'home/price.html',locals())
+    model = request.GET.get('model','model')
 
     # 處理過程
 

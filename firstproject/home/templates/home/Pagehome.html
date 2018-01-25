@@ -1,0 +1,41 @@
+{% extends 'body.html'%}
+
+{% block style %}
+<style>
+    #dmp{
+        padding-top: 20px ;
+        padding-bottom: 30px;
+    }
+</style>
+<title>首頁</title>
+{% endblock %}
+{% block content %}
+<div class="container">   
+        <h1 style="color:white"  align="center"><strong>LeoNardo Rental Car</strong></h1>
+        <img src="static/images/HomepageHeader.jpg"  class="img-fluid" alt="Responsive image">
+        </div>
+             <!--                          -圖片以上                               -->
+        
+    <div class="container"  id="dmp">
+                    <!-- Example row of columns -->
+    <div class="row" >
+    <div class="col-md-4">
+        <h2 style="color:antiquewhite">公司簡介</h2>
+        <p style="color:white">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    <div class="col-md-4">
+        <h2 style="color:antiquewhite">租還服務</h2>
+        <p style="color:white">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    <div class="col-md-4">
+        <h2 style="color:antiquewhite">近期活動</h2>
+        <p style="color:white">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+            <!-- <hr style="color:white"> -->
+    </div> <!-- /container -->
+    </main>
+{% endblock %}
